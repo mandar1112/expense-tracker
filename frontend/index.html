@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>Expense Tracker</h2>
+            </div>
+
+            <nav class="navigation">
+
+                <a href="#" class="nav-item active">
+                    Dashboard
+                </a>
+
+                <a href="#" class="nav-item">
+                    Expenses
+                </a>
+
+                <a href="#" class="nav-item">
+                    Add Expense
+                </a>
+
+                <a href="#" class="nav-item">
+                    Analytics
+                </a>
+
+                <a href="#" class="nav-item">
+                    AI Assistant
+                </a>
+
+                <a href="#" class="nav-item">
+                    Settings
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <button class="logout-button">
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                    <p>Overview of your expenses</p>
+                </div>
+
+                <div class="user-section">
+
+                    <div class="user-avatar">
+                        M
+                    </div>
+
+                    <div class="user-info">
+                        <span class="user-name">Mandar</span>
+                        <span class="user-email">user@example.com</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <section class="dashboard">
+
+                <div class="summary-cards">
+
+                    <div class="summary-card">
+
+                        <span class="card-title">Total Expenses</span>
+                        <h2>₹12,500.00</h2>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <span class="card-title">Total Transactions</span>
+                        <h2>29</h2>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <span class="card-title">Average Expense</span>
+                        <h2>₹431.03</h2>
+
+                    </div>
+
+                </div>
+
+
+                <section class="recent-expenses">
+
+                    <div class="section-header">
+
+                        <div>
+                            <h2>Recent Expenses</h2>
+                            <p>Your latest transactions</p>
+                        </div>
+
+                        <button class="add-expense-button">
+                            + Add Expense
+                        </button>
+
+                    </div>
+
+
+                    <div class="expense-table-container">
+
+                        <table class="expense-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Food</td>
+                                    <td>Coffee</td>
+                                    <td>₹350.00</td>
+                                    <td>21 Sep 2026</td>
+                                    <td>
+                                        <button>Edit</button>
+                                        <button>Delete</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Travel</td>
+                                    <td>Petrol</td>
+                                    <td>₹1,200.00</td>
+                                    <td>22 Sep 2026</td>
+                                    <td>
+                                        <button>Edit</button>
+                                        <button>Delete</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Shopping</td>
+                                    <td>New Mouse</td>
+                                    <td>₹800.00</td>
+                                    <td>22 Sep 2026</td>
+                                    <td>
+                                        <button>Edit</button>
+                                        <button>Delete</button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
