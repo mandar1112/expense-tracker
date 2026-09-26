@@ -1,148 +1,159 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings - Expense Tracker</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Settings - Expense Tracker</title>
 
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/settings.css">
-</head>
-<body>
+        <link rel="stylesheet" href="../css/base.css">
+        <link rel="stylesheet" href="../css/components.css">
+        <link rel="stylesheet" href="../css/settings.css">
+    </head>
 
-<div class="app">
+        <body>
 
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <a href="dashboard.html" class="sidebar-logo">Expense Tracker</a>
-        </div>
+        <div class="app">
 
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-                <li><a href="expenses.html" class="nav-link">Expenses</a></li>
-                <li><a href="reports.html" class="nav-link">Reports</a></li>
-                <li><a href="profile.html" class="nav-link">Profile</a></li>
-                <li><a href="settings.html" class="nav-link active">Settings</a></li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-            <a href="login.html" class="nav-link">Logout</a>
-        </div>
-    </aside>
-
-    <div class="main-wrapper">
-
-        <header class="header">
-            <h1 class="header-title">Settings</h1>
-
-            <div class="header-right">
-                <a href="profile.html" class="user-button">
-                    <span class="user-avatar">U</span>
-                    <span>User</span>
-                </a>
-            </div>
-        </header>
-
-        <main class="content">
-
-            <div class="page-header">
-                <div>
-                    <h1>Settings</h1>
-                    <p>Manage your account and application preferences.</p>
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <a href="dashboard.html" class="sidebar-logo">Expense Tracker</a>
                 </div>
-            </div>
 
-            <div class="settings-layout">
-
-                <nav class="settings-navigation">
-                    <a href="#account" class="active">Account</a>
-                    <a href="#security">Security</a>
-                    <a href="#privacy">Privacy</a>
-                    <a href="#data">Data</a>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                        <li><a href="expenses.html" class="nav-link">Expenses</a></li>
+                        <li><a href="reports.html" class="nav-link">Reports</a></li>
+                        <li><a href="profile.html" class="nav-link">Profile</a></li>
+                        <li><a href="settings.html" class="nav-link active">Settings</a></li>
+                    </ul>
                 </nav>
 
-                <div>
-
-                    <section class="settings-section" id="account">
-                        <h2>Account</h2>
-                        <p class="settings-description">
-                            Manage your account preferences.
-                        </p>
-
-                        <div class="setting-row">
-                            <div class="setting-info">
-                                <h3>Profile</h3>
-                                <p>Update your personal information.</p>
-                            </div>
-
-                            <a href="profile.html" class="btn btn-outline btn-small">
-                                Manage
-                            </a>
-                        </div>
-                    </section>
-
-                    <section class="settings-section" id="security">
-                        <h2>Security</h2>
-                        <p class="settings-description">
-                            Manage your account security.
-                        </p>
-
-                        <div class="setting-row">
-                            <div class="setting-info">
-                                <h3>Password</h3>
-                                <p>Change your account password.</p>
-                            </div>
-
-                            <button type="button" class="btn btn-outline btn-small">
-                                Change
-                            </button>
-                        </div>
-                    </section>
-
-                    <section class="settings-section" id="privacy">
-                        <h2>Privacy</h2>
-                        <p class="settings-description">
-                            Control how your account data is handled.
-                        </p>
-
-                        <div class="setting-row">
-                            <div class="setting-info">
-                                <h3>Privacy Settings</h3>
-                                <p>Privacy controls will be managed by the backend.</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="settings-section" id="data">
-                        <h2>Data</h2>
-                        <p class="settings-description">
-                            Manage your expense data.
-                        </p>
-
-                        <div class="setting-row">
-                            <div class="setting-info">
-                                <h3>Export Data</h3>
-                                <p>Download your expense data.</p>
-                            </div>
-
-                            <button type="button" class="btn btn-outline btn-small">
-                                Export
-                            </button>
-                        </div>
-                    </section>
-
+                <div class="sidebar-footer">
+                    <a href="#" class="nav-link" id="logout-button">Logout</a>
                 </div>
+            </aside>
+
+            <div class="main-wrapper">
+
+                <header class="header">
+                    <button type="button" class="mobile-menu" aria-label="Open menu">☰</button>
+                    <h1 class="header-title">Settings</h1>
+
+                    <div class="header-right">
+                        <a href="profile.html" class="user-button">
+                            <span class="user-avatar">U</span>
+                            <span>User</span>
+                        </a>
+                    </div>
+                </header>
+
+                <main class="content">
+
+                    <div class="page-header">
+                        <div>
+                            <h1>Settings</h1>
+                            <p>Manage your account and application preferences.</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-layout">
+
+                        <nav class="settings-navigation">
+                            <a href="#account" class="active">Account</a>
+                            <a href="#security">Security</a>
+                            <a href="#privacy">Privacy</a>
+                            <a href="#data">Data</a>
+                        </nav>
+
+                        <div>
+
+                            <section class="settings-section" id="account">
+                                <h2>Account</h2>
+                                <p class="settings-description">
+                                    Manage your account preferences.
+                                </p>
+
+                                <div class="setting-row">
+                                    <div class="setting-info">
+                                        <h3>Profile</h3>
+                                        <p>Update your personal information.</p>
+                                    </div>
+
+                                    <a href="profile.html" class="btn btn-outline btn-small" id="manage-profile">
+                                        Manage
+                                    </a>
+                                </div>
+                            </section>
+
+                            <section class="settings-section" id="security">
+                                <h2>Security</h2>
+                                <p class="settings-description">
+                                    Manage your account security.
+                                </p>
+
+                                <div class="setting-row">
+                                    <div class="setting-info">
+                                        <h3>Password</h3>
+                                        <p>Change your account password.</p>
+                                    </div>
+
+                                    <button type="button" class="btn btn-outline btn-small" id="change-password">
+                                        Change
+                                    </button>
+                                </div>
+                            </section>
+
+                            <section class="settings-section" id="privacy">
+                                <h2>Privacy</h2>
+                                <p class="settings-description">
+                                    Control how your account data is handled.
+                                </p>
+
+                                <div class="setting-row">
+                                    <div class="setting-info">
+                                        <h3>Privacy Settings</h3>
+                                        <p>Privacy controls will be managed by the backend.</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="settings-section" id="data">
+                                <h2>Data</h2>
+                                <p class="settings-description">
+                                    Manage your expense data.
+                                </p>
+
+                                <div class="setting-row">
+                                    <div class="setting-info">
+                                        <h3>Export Data</h3>
+                                        <p>Download your expense data.</p>
+                                    </div>
+
+                                    <button type="button" class="btn btn-outline btn-small" id="export-data">
+                                        Export
+                                    </button>
+                                </div>
+                            </section>
+
+                        </div>
+
+                    </div>
+
+                </main>
 
             </div>
 
-        </main>
+        </div>
 
-    </div>
+        <script src="../js/core/api.js"></script>
+        <script src="../js/core/auth.js"></script>
+        <script src="../js/core/utils.js"></script>
+        <script src="../js/components/sidebar.js"></script>
+        <script src="../js/components/modal.js"></script>
+        <script src="../js/components/notifications.js"></script>
+        <script src="../js/pages/settings.js"></script>
 
-</div>
-
-</body>
+    </body>
 </html>

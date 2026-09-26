@@ -1,211 +1,222 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expenses - Expense Tracker</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Expenses - Expense Tracker</title>
 
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/expenses.css">
-</head>
-<body>
+        <link rel="stylesheet" href="../css/base.css">
+        <link rel="stylesheet" href="../css/components.css">
+        <link rel="stylesheet" href="../css/expenses.css">
+    </head>
 
-<div class="app">
+    <body>
 
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <a href="dashboard.html" class="sidebar-logo">Expense Tracker</a>
-        </div>
+        <div class="app">
 
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-                <li><a href="expenses.html" class="nav-link active">Expenses</a></li>
-                <li><a href="reports.html" class="nav-link">Reports</a></li>
-                <li><a href="profile.html" class="nav-link">Profile</a></li>
-                <li><a href="settings.html" class="nav-link">Settings</a></li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-            <a href="login.html" class="nav-link">Logout</a>
-        </div>
-    </aside>
-
-    <div class="main-wrapper">
-
-        <header class="header">
-            <h1 class="header-title">Expenses</h1>
-
-            <div class="header-right">
-                <a href="profile.html" class="user-button">
-                    <span class="user-avatar">U</span>
-                    <span>User</span>
-                </a>
-            </div>
-        </header>
-
-        <main class="content">
-
-            <div class="page-header">
-                <div>
-                    <h1>Expenses</h1>
-                    <p>View and manage your expenses.</p>
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <a href="dashboard.html" class="sidebar-logo">Expense Tracker</a>
                 </div>
 
-                <button type="button" class="btn btn-primary" id="add-expense-button">
-                    Add Expense
-                </button>
-            </div>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                        <li><a href="expenses.html" class="nav-link active">Expenses</a></li>
+                        <li><a href="reports.html" class="nav-link">Reports</a></li>
+                        <li><a href="profile.html" class="nav-link">Profile</a></li>
+                        <li><a href="settings.html" class="nav-link">Settings</a></li>
+                    </ul>
+                </nav>
 
-            <section class="expense-toolbar">
-
-                <div class="expense-filters">
-
-                    <input
-                        type="search"
-                        id="expense-search"
-                        class="filter-input"
-                        placeholder="Search expenses..."
-                    >
-
-                    <select id="category-filter" class="filter-select">
-                        <option value="">All Categories</option>
-                    </select>
-
-                    <select id="sort-expenses" class="filter-select">
-                        <option value="">Sort By</option>
-                        <option value="amount_asc">Amount: Low to High</option>
-                        <option value="amount_desc">Amount: High to Low</option>
-                        <option value="date_asc">Date: Oldest First</option>
-                        <option value="date_desc">Date: Newest First</option>
-                        <option value="category_asc">Category: A-Z</option>
-                        <option value="category_desc">Category: Z-A</option>
-                        <option value="description_asc">Description: A-Z</option>
-                        <option value="description_desc">Description: Z-A</option>
-                    </select>
-
+                <div class="sidebar-footer">
+                    <a href="#" class="nav-link" id="logout-button">Logout</a>
                 </div>
+            </aside>
 
-            </section>
+            <div class="main-wrapper">
 
-            <section class="expense-table-container">
+                <header class="header">
+                    <button type="button" class="mobile-menu" aria-label="Open menu">☰</button>
+                    <h1 class="header-title">Expenses</h1>
 
-                <div class="table-wrapper">
-                    <table class="data-table">
+                    <div class="header-right">
+                        <a href="profile.html" class="user-button">
+                            <span class="user-avatar">U</span>
+                            <span>User</span>
+                        </a>
+                    </div>
+                </header>
 
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Category</th>
-                                <th>Description</th>
-                                <th>Amount</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
+                <main class="content">
 
-                        <tbody id="expense-table-body">
-                            <tr>
-                                <td colspan="5">
-                                    <div class="empty-state">
-                                        <h3>No expenses available</h3>
-                                        <p>Expenses from the backend will appear here.</p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
+                    <div class="page-header">
+                        <div>
+                            <h1>Expenses</h1>
+                            <p>View and manage your expenses.</p>
+                        </div>
 
-                    </table>
-                </div>
-
-                <div class="pagination">
-
-                    <span id="pagination-info" class="text-secondary">
-                        No expenses
-                    </span>
-
-                    <div class="pagination-controls">
-                        <button type="button" class="pagination-button" id="previous-page">
-                            Previous
-                        </button>
-
-                        <button type="button" class="pagination-button" id="next-page">
-                            Next
+                        <button type="button" class="btn btn-primary" id="add-expense-button">
+                            Add Expense
                         </button>
                     </div>
 
-                </div>
+                    <section class="expense-toolbar">
 
-            </section>
+                        <div class="expense-filters">
 
-        </main>
+                            <input
+                                type="search"
+                                id="expense-search"
+                                class="filter-input"
+                                placeholder="Search expenses..."
+                            >
 
-    </div>
+                            <select id="category-filter" class="filter-select">
+                                <option value="">All Categories</option>
+                            </select>
 
-</div>
+                            <select id="sort-expenses" class="filter-select">
+                                <option value="">Sort By</option>
+                                <option value="amount_asc">Amount: Low to High</option>
+                                <option value="amount_desc">Amount: High to Low</option>
+                                <option value="date_asc">Date: Oldest First</option>
+                                <option value="date_desc">Date: Newest First</option>
+                                <option value="category_asc">Category: A-Z</option>
+                                <option value="category_desc">Category: Z-A</option>
+                                <option value="description_asc">Description: A-Z</option>
+                                <option value="description_desc">Description: Z-A</option>
+                            </select>
 
-<!-- Add Expense Modal -->
+                        </div>
 
-<div class="modal-overlay hidden" id="expense-modal">
+                    </section>
 
-    <div class="modal">
+                    <section class="expense-table-container">
 
-        <div class="modal-header">
-            <h2>Add Expense</h2>
+                        <div class="table-wrapper">
+                            <table class="data-table">
 
-            <button type="button" class="btn btn-small btn-outline" id="close-expense-modal">
-                Close
-            </button>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Category</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="expense-table-body">
+                                    <tr>
+                                        <td colspan="5">
+                                            <div class="empty-state">
+                                                <h3>No expenses available</h3>
+                                                <p>Expenses from the backend will appear here.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                        <div class="pagination">
+
+                            <span id="pagination-info" class="text-secondary">
+                                No expenses
+                            </span>
+
+                            <div class="pagination-controls">
+                                <button type="button" class="pagination-button" id="previous-page">
+                                    Previous
+                                </button>
+
+                                <button type="button" class="pagination-button" id="next-page">
+                                    Next
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </main>
+
+            </div>
+
         </div>
 
-        <div class="modal-body">
+        <!-- Add Expense Modal -->
 
-            <form class="expense-form" id="expense-form">
+        <div class="modal-overlay hidden" id="expense-modal">
 
-                <div class="form-row">
+            <div class="modal">
 
-                    <div class="form-group">
-                        <label for="expense-amount">Amount</label>
-                        <input type="number" id="expense-amount" name="amount" min="0" step="0.01" required>
-                    </div>
+                <div class="modal-header">
+                    <h2>Add Expense</h2>
 
-                    <div class="form-group">
-                        <label for="expense-category">Category</label>
-                        <select id="expense-category" name="category" required>
-                            <option value="">Select Category</option>
-                        </select>
-                    </div>
-
-                </div>
-
-                <div class="form-group">
-                    <label for="expense-description">Description</label>
-                    <textarea id="expense-description" name="description" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="expense-date">Date</label>
-                    <input type="date" id="expense-date" name="date" required>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline" id="cancel-expense">
-                        Cancel
-                    </button>
-
-                    <button type="submit" class="btn btn-primary">
-                        Save Expense
+                    <button type="button" class="btn btn-small btn-outline" id="close-expense-modal">
+                        Close
                     </button>
                 </div>
 
-            </form>
+                <div class="modal-body">
+
+                    <form class="expense-form" id="expense-form">
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="expense-amount">Amount</label>
+                                <input type="number" id="expense-amount" name="amount" min="0" step="0.01" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="expense-category">Category</label>
+                                <select id="expense-category" name="category" required>
+                                    <option value="">Select Category</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="expense-description">Description</label>
+                            <textarea id="expense-description" name="description" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="expense-date">Date</label>
+                            <input type="date" id="expense-date" name="date" required>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline" id="cancel-expense">
+                                Cancel
+                            </button>
+
+                            <button type="submit" class="btn btn-primary">
+                                Save Expense
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
+        <script src="../js/core/api.js"></script>
+        <script src="../js/core/auth.js"></script>
+        <script src="../js/core/utils.js"></script>
+        <script src="../js/components/sidebar.js"></script>
+        <script src="../js/components/modal.js"></script>
+        <script src="../js/components/notifications.js"></script>
+        <script src="../js/pages/expenses.js"></script>
 
-</div>
-
-</body>
+    </body>
 </html>

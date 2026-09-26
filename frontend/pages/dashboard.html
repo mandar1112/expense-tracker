@@ -1,128 +1,139 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Expense Tracker</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard - Expense Tracker</title>
 
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/dashboard.css">
-</head>
-<body>
+        <link rel="stylesheet" href="../css/base.css">
+        <link rel="stylesheet" href="../css/components.css">
+        <link rel="stylesheet" href="../css/dashboard.css">
+    </head>
 
-<div class="app">
+    <body>
 
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <a href="dashboard.html" class="sidebar-logo">Expense Tracker</a>
-        </div>
+        <div class="app">
 
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
-                <li><a href="expenses.html" class="nav-link">Expenses</a></li>
-                <li><a href="reports.html" class="nav-link">Reports</a></li>
-                <li><a href="profile.html" class="nav-link">Profile</a></li>
-                <li><a href="settings.html" class="nav-link">Settings</a></li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-            <a href="login.html" class="nav-link">Logout</a>
-        </div>
-    </aside>
-
-    <div class="main-wrapper">
-
-        <header class="header">
-            <div>
-                <h1 class="header-title">Dashboard</h1>
-            </div>
-
-            <div class="header-right">
-                <a href="profile.html" class="user-button">
-                    <span class="user-avatar">U</span>
-                    <span>User</span>
-                </a>
-            </div>
-        </header>
-
-        <main class="content">
-
-            <div class="page-header">
-                <div>
-                    <h1>Dashboard</h1>
-                    <p>Your expense overview will appear here.</p>
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <a href="dashboard.html" class="sidebar-logo">Expense Tracker</a>
                 </div>
 
-                <a href="expenses.html" class="btn btn-primary">
-                    Add Expense
-                </a>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+                        <li><a href="expenses.html" class="nav-link">Expenses</a></li>
+                        <li><a href="reports.html" class="nav-link">Reports</a></li>
+                        <li><a href="profile.html" class="nav-link">Profile</a></li>
+                        <li><a href="settings.html" class="nav-link">Settings</a></li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <a href="#" class="nav-link" id="logout-button">Logout</a>
+                </div>
+            </aside>
+
+            <div class="main-wrapper">
+
+                <header class="header">
+                    <button type="button" class="mobile-menu" aria-label="Open menu">☰</button>
+                    <div>
+                        <h1 class="header-title">Dashboard</h1>
+                    </div>
+
+                    <div class="header-right">
+                        <a href="profile.html" class="user-button">
+                            <span class="user-avatar">U</span>
+                            <span>User</span>
+                        </a>
+                    </div>
+                </header>
+
+                <main class="content">
+
+                    <div class="page-header">
+                        <div>
+                            <h1>Dashboard</h1>
+                            <p>Your expense overview will appear here.</p>
+                        </div>
+
+                        <a href="expenses.html" class="btn btn-primary">
+                            Add Expense
+                        </a>
+                    </div>
+
+                    <section class="stats-grid">
+
+                        <article class="stat-card">
+                            <div class="stat-title">Total Expenses</div>
+                            <div class="stat-value" data-stat="total">--</div>
+                        </article>
+
+                        <article class="stat-card">
+                            <div class="stat-title">This Month</div>
+                            <div class="stat-value" data-stat="month">--</div>
+                        </article>
+
+                        <article class="stat-card">
+                            <div class="stat-title">Average Expense</div>
+                            <div class="stat-value" data-stat="average">--</div>
+                        </article>
+
+                        <article class="stat-card">
+                            <div class="stat-title">Categories</div>
+                            <div class="stat-value" data-stat="categories">--</div>
+                        </article>
+
+                    </section>
+
+                    <section class="dashboard-grid">
+
+                        <article class="card">
+                            <div class="card-header">
+                                <h2>Recent Expenses</h2>
+                                <a href="expenses.html" class="btn btn-small btn-outline">View All</a>
+                            </div>
+
+                            <div class="expense-list" id="recent-expenses">
+                                <div class="empty-state">
+                                    <h3>No expenses available</h3>
+                                    <p>Your recent expenses will appear here.</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-header">
+                                <h2>Categories</h2>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="category-list" id="category-summary">
+                                    <div class="empty-state">
+                                        <h3>No category data</h3>
+                                        <p>Category information will appear here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                    </section>
+
+                </main>
+
             </div>
 
-            <section class="stats-grid">
+        </div>
 
-                <article class="stat-card">
-                    <div class="stat-title">Total Expenses</div>
-                    <div class="stat-value" data-stat="total">--</div>
-                </article>
+        <script src="../js/core/api.js"></script>
+        <script src="../js/core/auth.js"></script>
+        <script src="../js/core/utils.js"></script>
+        <script src="../js/components/modal.js"></script>
+        <script src="../js/components/notifications.js"></script>
+        <script src="../js/components/sidebar.js"></script>
+        <script src="../js/pages/dashboard.js"></script>
 
-                <article class="stat-card">
-                    <div class="stat-title">This Month</div>
-                    <div class="stat-value" data-stat="month">--</div>
-                </article>
-
-                <article class="stat-card">
-                    <div class="stat-title">Average Expense</div>
-                    <div class="stat-value" data-stat="average">--</div>
-                </article>
-
-                <article class="stat-card">
-                    <div class="stat-title">Categories</div>
-                    <div class="stat-value" data-stat="categories">--</div>
-                </article>
-
-            </section>
-
-            <section class="dashboard-grid">
-
-                <article class="card">
-                    <div class="card-header">
-                        <h2>Recent Expenses</h2>
-                        <a href="expenses.html" class="btn btn-small btn-outline">View All</a>
-                    </div>
-
-                    <div class="expense-list" id="recent-expenses">
-                        <div class="empty-state">
-                            <h3>No expenses available</h3>
-                            <p>Your recent expenses will appear here.</p>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-header">
-                        <h2>Categories</h2>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="category-list" id="category-summary">
-                            <div class="empty-state">
-                                <h3>No category data</h3>
-                                <p>Category information will appear here.</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-            </section>
-
-        </main>
-
-    </div>
-
-</div>
-
-</body>
+    </body>
 </html>

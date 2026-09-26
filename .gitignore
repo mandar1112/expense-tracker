@@ -1,19 +1,19 @@
-# Environment variables
+
 .env
 
-# Python cache
 __pycache__/
 *.py[cod]
+.pytest_cache/
 
-# Virtual environments
 venv/
 .venv/
 env/
 
-# IDE settings
 .vscode/
 .idea/
 
-# OS files
 .DS_Store
 Thumbs.db
+
+backend/.venv/
+backend/.env
