@@ -10,7 +10,7 @@ from app.database import Base
 
 class Expense(Base):
 
-    __tablename = "expenses"
+    __tablename__ = "expenses"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
